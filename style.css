@@ -1,0 +1,212 @@
+body {
+  font-family: Georgia, serif;
+  background: linear-gradient(135deg, #ffe4e9, #ffd1dc);
+  text-align: center;
+  margin: 0;
+}
+
+section {
+  padding: 60px 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+.story {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+}
+
+.story div, .letter div {
+  background: #ffe4e9(252, 185, 239);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+  gap: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.buttons button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+#yesBtn {
+  background: #ff4d6d;
+  color: white;
+}
+
+#noBtn {
+  background: white;
+  color: #ff4d6d;
+  position: relative;
+}
+
+.hidden {
+  display: none;
+}
+
+#musicContainer {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+#musicContainer {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+#musicBtn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  animation: pulse 1.5s infinite, flashColors 2s infinite;
+  font-size: 24px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Hover effect */
+#musicBtn:hover {
+  transform: scale(1.3);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Pulsing animation */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/* Flashing gradient animation */
+@keyframes flashColors {
+  0% { background: linear-gradient(45deg, #ff416c, #ff4b2b); }
+  25% { background: linear-gradient(45deg, #ff4b2b, #ffcc00); }
+  50% { background: linear-gradient(45deg, #ffcc00, #ff416c); }
+  75% { background: linear-gradient(45deg, #ff4b2b, #ff416c); }
+  100% { background: linear-gradient(45deg, #ff416c, #ff4b2b); }
+}
+
+/* Tooltip style */
+#musicTooltip {
+  position: absolute;
+  top: 50%;
+  right: 70px;        /* distance from button */
+  transform: translateY(-50%);
+  background: #ff416c;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  opacity: 1;
+  transition: opacity 1s ease;
+  pointer-events: none;
+}
+.lock-box {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.lock-box input {
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+}
+
+.player-wrapper {
+  position: relative;
+  width: 200px;
+  margin: 30px auto;
+}
+
+.player-wrapper img {
+  width: 100%;
+}
+
+#playerSilhouette {
+  filter: brightness(0) drop-shadow(0 0 15px rgba(0,0,0,0.7));
+}
+
+.letter-card {
+  background: pink;
+  padding: 25px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+.hint {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.story-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.story-buttons button {
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(146, 123, 123, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.popup-content {
+  background: palevioletred;
+  padding: 30px;
+  max-width: 600px;
+  width: 90%;
+  border-radius: 20px;
+  position: relative;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}

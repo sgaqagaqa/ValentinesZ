@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Will You Be My Valentine?</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<audio id="bgMusic" loop>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<div id="musicContainer">
+  <button id="musicBtn" onclick="toggleMusic()">🎵</button>
+  <span id="musicTooltip">🎵 Play me!</span>
+</div>
+
+<script>
+function toggleMusic() {
+  const music = document.getElementById('bgMusic');
+  if (music.paused) {
+    music.play();
+  } else {
+    music.pause();
+  }
+}
+
+// Hide the tooltip after 3 seconds
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    const tooltip = document.getElementById('musicTooltip');
+    tooltip.style.opacity = '0';
+  }, 5000);
+});
+</script>
+
+<section class="hero">
+  <h1>It only felt right with you</h1>
+  <p>Our very first Valentine’s Day together♥️.</p>
+  <p id="countdown"></p>
+</section>
+
+<!-- ===== STORY SECTION ===== -->
+<section class="story">
+
+  <!-- Story Buttons -->
+  <div class="story-buttons">
+    <button data-popup="met">The day we met</button>
+    <button data-popup="knew">When I knew</button>
+    <button data-popup="now">Us now</button>
+  </div>
+
+  <!-- Popup: The day we met -->
+  <div class="popup-overlay hidden" id="popup-met">
+    <div class="popup-content">
+      <span class="close-btn">&times;</span>
+      <h2>The day we met</h2>
+
+      <p>The day we met, I didn’t realise I was being slowly, carefully cooked .</p>
+
+      <p>You were calm, composedish… almost <em>too</em> well-behaved .</p>
+
+      <p>
+        You carried yourself like someone who had it all together, soft-spoken, polite & intentional .
+        The kind of girl who knows exactly how she wants to be seen .
+        You posed without trying, choosing your words, holding back just enough to make me crave more of you .
+        And I remember thinking, <em>okay… she’s different for the rest .</em>
+      </p>
+
+      <p>But there was something underneath that calm . A quiet confidence . A spark you weren’t letting loose just yet .</p>
+
+      <p>
+        It felt like the calm before a storm..... not a bad one, but the kind that changes the air .
+        I didn’t know it then, but you were already pulling me in, not loudly, not forcefully… just steadily .
+        And when I walked away from that first encounter, you stayed on my mind longer than I expected .
+      </p>
+
+      <p>That’s how it started . Soft . Controlled & Dangerously intentional .</p>
+    </div>
+  </div>
+
+  <!-- Popup: When I knew -->
+  <div class="popup-overlay hidden" id="popup-knew">
+    <div class="popup-content">
+      <span class="close-btn">&times;</span>
+      <h2>When I knew</h2>
+
+      <p>The night you made that picnic in your room changed everything for me .</p>
+
+      <p>It wasn’t about how it looked, though it was beautiful . It was about the thought behind it .</p>
+
+      <p>You planned it . You imagined it . You cared enough to turn a normal space into something meaningful for me .</p>
+
+      <p>
+        Candles, effort, detail but more than that, <strong>intention</strong> .
+        You didn’t do it to impress me . You did it to make me feel special . Seen . Considered .
+      </p>
+
+      <p>That night, it clicked .</p>
+
+      <p>
+        This wasn’t just attraction . This wasn’t just chemistry .
+        This was someone who loves with effort and attentiveness .
+      </p>
+
+      <p>
+        Anyone can say nice things . Anyone can show up when it’s convenient .
+        But that night showed me how deeply you think and how naturally love flows from you .
+      </p>
+
+      <p><em>This is my person .</em></p>
+    </div>
+  </div>
+
+  <!-- Popup: Us now -->
+  <div class="popup-overlay hidden" id="popup-now">
+    <div class="popup-content">
+      <span class="close-btn">&times;</span>
+      <h2>Us now</h2>
+
+      <p>Right now, we’re not pretending to be perfect .</p>
+
+      <p>We’re real . We’ve grown . We’ve been tested .</p>
+
+      <p>
+        Loving you has made me more intentional, slower to anger, and more aware of how my actions affect
+        someone I genuinely care about .
+      </p>
+
+      <p>
+        You’ve taught me that love isn’t just about passion but it’s about patience .
+        It’s about understanding . It’s about being present .
+      </p>
+
+      <p>
+        We choose each other every single day not because it’s easy,
+        but because it’s worth it .
+      </p>
+
+      <p>
+        I’m growing because of you . I’m softer where I used to be guarded .
+        And even knowing the storm behind the calm… I’d still choose you every time .
+      </p>
+    </div>
+  </div>
+
+</section>
+<!-- ===== END STORY SECTION ===== -->
+
+<section class="gallery">
+  <img src="p.jpeg">
+  <img src="r.JPG">
+  <img src="n.JPG">
+  <img src="b.jpeg">
+</section>
+
+<section class="letter">
+  <h2>Unlock my letter 🔐</h2>
+  <p class="hint">Hint: My current favourite Liverpool player ;) <p><h6> Ps: small lowcase name and surname</h6></p></p>
+
+  <div class="lock-box">
+    <input id="passwordInput" type="text" placeholder="Type the name…" />
+    <button id="unlockBtn">Unlock</button>
+  </div>
+
+  <div class="player-wrapper">
+    <img id="playerSilhouette" src="Subject.png">
+    <img id="playerReal" src="EE.jpeg" class="hidden">
+  </div>
+
+  <div id="letterText" class="hidden letter-card">
+    <p>You actually got it right ❤️ </p> 
+    <p>uyangazi mos Bozza😏</p>
+  </div>
+</section>
+
+<section class="final">
+  <h2>So… will you be my Valentine? 💌</h2>
+  <div class="buttons">
+    <button id="yesBtn">Yes ❤️</button>
+    <button id="noBtn">No 🙃</button>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
